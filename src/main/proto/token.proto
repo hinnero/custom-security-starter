@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.example.token;
+
+message ValidateTokenRequest {
+  string token = 1;
+}
+
+message ValidateTokenResponse {
+  string username = 1;
+  repeated string authorities = 2;
+}
+
+service TokenService {
+  rpc validateToken (ValidateTokenRequest) returns (ValidateTokenResponse);
+}
